@@ -24,13 +24,13 @@ namespace CustomersController {
             reader.Close();
             return customers;
         }
-        public Customer? GetByID(int Input) {
-            if (Input<=0) {
+        public Customer? GetByID(int ID) {
+            if (ID<=0) {
                 throw new ArgumentException("ID must be > 0");
             }
             var sql = "SELECT * FROM Customers WHERE ID = @ID;";
             var cmd = new SqlCommand(sql, sqlconn);
-            cmd.Parameters.AddWithValue("@ID",Input);
+            cmd.Parameters.AddWithValue("@ID",ID);
             var reader = cmd.ExecuteReader();
             var cust = new Customer();
             if (!reader.HasRows) {
@@ -104,6 +104,26 @@ namespace CustomersController {
                     Console.WriteLine($"1 Row Affected");
                 }
             } else { Console.WriteLine("Action Aborted, 0 rows affected"); }
+        }
+        public List<Customer> GetByPartialName(string Input) {
+            var sql = "SELECT * FROM Customers WHERE Name LIKE @IN ORDER BY Sales DESC;";
+            var cmd = new SqlCommand(sql, sqlconn);
+            string InMod = "%" + Input + "%";
+            cmd.Parameters.AddWithValue("@IN", InMod);
+            var reader = cmd.ExecuteReader();
+            var customers = new List<Customer>();
+            while (reader.Read()) {
+                var cust = new Customer();
+                cust.ID = (int)reader["ID"];
+                cust.Name = (string)reader["Name"];
+                cust.City = (string)reader["City"];
+                cust.State = (string)reader["State"];
+                cust.Sales = (decimal)reader["Sales"];
+                cust.Active = (bool)reader["active"];
+                customers.Add(cust);
+            }
+            reader.Close();
+            return customers;
         }
     }
 }

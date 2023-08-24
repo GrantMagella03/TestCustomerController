@@ -15,13 +15,14 @@ internal class Program {
         Console.WriteLine("Connection Opened Successfully");
         //------DB Connection Open------
         var cctrl = new CustomersControllerClass(conn);
-        var NC = new Customer("ACME INC", "Mason", "OH");
-        cctrl.Delete(40);
+        //var NC = new Customer("ACME INC", "Mason", "OH");
+        //cctrl.Delete(40);
         //cctrl.Update(40, NC);
         //cctrl.Insert(NC);
-        List<Customer> custs = cctrl.GetAll();
+        List<Customer> custs = cctrl.GetByPartialName("er");
         foreach (Customer cust in custs) {
-            Console.WriteLine($"{cust.ID} | {cust.Name}");
+            //Console.WriteLine($"{cust.ID} | {cust.Name}");
+            cust.print();
         }
         /*
         Customer? c = cctrl.GetByID(39);
