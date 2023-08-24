@@ -13,14 +13,17 @@ internal class Program {
             throw new Exception("Connection didn't open");
         }
         Console.WriteLine("Connection Opened Successfully");
-        //DB Connection Open
-
-        /*
+        //------DB Connection Open------
         var cctrl = new CustomersControllerClass(conn);
+        var NC = new Customer("ACME INC", "Mason", "OH");
+        cctrl.Delete(40);
+        //cctrl.Update(40, NC);
+        //cctrl.Insert(NC);
         List<Customer> custs = cctrl.GetAll();
         foreach (Customer cust in custs) {
             Console.WriteLine($"{cust.ID} | {cust.Name}");
         }
+        /*
         Customer? c = cctrl.GetByID(39);
         try {
             c.print();
@@ -28,7 +31,7 @@ internal class Program {
             Console.WriteLine("Id Does Not Exist");
         }
         */
-        //DB Connection Close
+        //------DB Connection Close------
         conn.Close();
     }
 }
