@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using CustomersController;
+using OrdersControllerLib;
 
 internal class Program {
     private static void Main(string[] args) {
@@ -14,6 +15,11 @@ internal class Program {
         }
         Console.WriteLine("Connection Opened Successfully");
         //------DB Connection Open------
+        test2(conn);
+        //------DB Connection Close------
+        conn.Close();
+    }
+    static void test1(SqlConnection conn) {
         var cctrl = new CustomersControllerClass(conn);
         //var NC = new Customer("ACME INC", "Mason", "OH");
         //cctrl.Delete(40);
@@ -32,7 +38,18 @@ internal class Program {
             Console.WriteLine("Id Does Not Exist");
         }
         */
-        //------DB Connection Close------
-        conn.Close();
+    }
+    static void test2(SqlConnection conn) {
+        var octrl = new OrdersController(conn);
+        var ords1 = octrl.GetAll();
+        //var o1 = new Order(39,DateTime.Now,"Test Order");
+        //var o2 = octrl.GetByID(11);
+        //octrl.Update(30, o1);
+        //o2.print();
+        //octrl.Insert(o1);
+        //octrl.Delete(30);
+        foreach (Order O in  ords1) { 
+            O.print();
+        }
     }
 }

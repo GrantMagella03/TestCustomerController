@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCustomerController", "TestCustomerController\TestCustomerController.csproj", "{B564E109-C4AD-4090-8121-A726ABDEABE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCustomerController", "TestCustomerController\TestCustomerController.csproj", "{B564E109-C4AD-4090-8121-A726ABDEABE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersController", "CustomersController\CustomersController.csproj", "{98A39E18-3AFA-4F9E-B407-14612A03F68C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomersController", "CustomersController\CustomersController.csproj", "{98A39E18-3AFA-4F9E-B407-14612A03F68C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersControllerLib", "OrdersControllerLib\OrdersControllerLib.csproj", "{A704647B-6851-4E1D-A221-DD02AFD7B76F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{98A39E18-3AFA-4F9E-B407-14612A03F68C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A39E18-3AFA-4F9E-B407-14612A03F68C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A39E18-3AFA-4F9E-B407-14612A03F68C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A704647B-6851-4E1D-A221-DD02AFD7B76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A704647B-6851-4E1D-A221-DD02AFD7B76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A704647B-6851-4E1D-A221-DD02AFD7B76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A704647B-6851-4E1D-A221-DD02AFD7B76F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

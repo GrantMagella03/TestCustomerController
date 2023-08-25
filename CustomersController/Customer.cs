@@ -19,8 +19,7 @@ namespace CustomersController {
         //public Customer(int id, string name, string city, string state = "OH", decimal sales = 0, bool active = true) {
             //ID = id; Name = name; City = city; State = state; Sales = sales; Active = active;
         //}
-        public void print() {Console.WriteLine($"{ID}|{Name}|{City}|{State}|{Sales}|{Active}");
-        }
+        public void print() {Console.WriteLine($"{ID}|{Name}|{City}|{State}|{Sales}|{Active}");}
     }
 
 }
